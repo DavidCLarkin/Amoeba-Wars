@@ -15,7 +15,9 @@ class EntityManager
     {
         let baseSystem = GKComponentSystem(componentClass: BaseComponent.self)
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
-        return [baseSystem, moveSystem]
+        let aiSystem = GKComponentSystem(componentClass: AIComponent.self)
+        let healthSystem = GKComponentSystem(componentClass: HealthComponent.self)
+        return [baseSystem, moveSystem, aiSystem, healthSystem]
     }()
     
     var toRemove = Set<GKEntity>()

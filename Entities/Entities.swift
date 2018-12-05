@@ -24,6 +24,11 @@ class Base: GKEntity
         addComponent(BaseComponent())
         addComponent(MoveComponent(maxSpeed: 0, maxAcceleration: 0, radius: Float(spriteComponent.node.size.width / 2), entityManager: entityManager))
         
+        if team == .teamRight
+        {
+            addComponent(AIComponent(entityManager: entityManager))
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

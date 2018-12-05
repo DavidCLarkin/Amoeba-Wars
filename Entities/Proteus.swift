@@ -21,6 +21,7 @@ class Proteus: GKEntity
         addComponent(spriteComponent)
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 50, maxAcceleration: 1, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
+        addComponent(HealthComponent(health: 300, maxHealth: 300))
         
     }
     

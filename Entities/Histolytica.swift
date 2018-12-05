@@ -21,6 +21,7 @@ class Histolytica: GKEntity
         addComponent(spriteComponent)
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 150, maxAcceleration: 5, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
+        addComponent(HealthComponent(health: 100, maxHealth: 100))
         
     }
     
