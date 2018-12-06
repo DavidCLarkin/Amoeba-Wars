@@ -18,10 +18,12 @@ class Histolytica: GKEntity
         let imageName = team.rawValue=="Left" ? ImageName.HistolyticaLeft : ImageName.HistolyticaRight;
         let texture = SKTexture(imageNamed: imageName)
         let spriteComponent = SpriteComponent(texture: texture)
+        spriteComponent.node.name = "Histolytica"
         addComponent(spriteComponent)
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 150, maxAcceleration: 5, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
         addComponent(HealthComponent(health: 100, maxHealth: 100))
+        addComponent(AttackComponent(entityManager: entityManager, spriteComponent: spriteComponent))
         
     }
     

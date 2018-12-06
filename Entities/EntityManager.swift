@@ -147,6 +147,7 @@ class EntityManager
         {
             spriteComponent.node.position = CGPoint(x: teamSpriteComponent.node.position.x, y: CGFloat.random(min: scene.size.height * 0.25, max: scene.size.height * 0.75))
             spriteComponent.node.zPosition = Layer.Amoeba
+            
         }
         add(amoeba)
     }
@@ -175,6 +176,7 @@ class EntityManager
         {
             spriteComponent.node.position = CGPoint(x: teamSpriteComponent.node.position.x, y: CGFloat.random(min: scene.size.height * 0.25, max: scene.size.height * 0.75))
             spriteComponent.node.zPosition = Layer.Amoeba
+            
         }
         add(amoeba)
     }

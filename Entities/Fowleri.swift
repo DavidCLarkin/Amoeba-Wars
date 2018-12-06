@@ -18,10 +18,12 @@ class Fowleri: GKEntity
         let imageName = team.rawValue=="Left" ? ImageName.FowleriLeft : ImageName.FowleriRight;
         let texture = SKTexture(imageNamed: imageName)
         let spriteComponent = SpriteComponent(texture: texture)
+        spriteComponent.node.name = "Fowleri"
         addComponent(spriteComponent)
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 50, maxAcceleration: 1, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
         addComponent(HealthComponent(health: 150, maxHealth: 150))
+        addComponent(AttackComponent(entityManager: entityManager, spriteComponent: spriteComponent))
         
     }
     

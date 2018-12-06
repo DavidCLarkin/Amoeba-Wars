@@ -51,8 +51,9 @@ class HealthComponent : GKComponent
         if currentHealth > 0
         {
             // TODO take damage on collision
-            print("health: \(currentHealth)")
-            takeDamage(damage: 1)
+            // TODO remove from parent if health <= 0
+            //print("health: \(currentHealth)")
+            //takeDamage(damage: 1)
         }
     }
     

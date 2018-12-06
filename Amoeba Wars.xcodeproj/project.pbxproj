@@ -43,6 +43,7 @@
 		63B1BBB121B193A000979A06 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1BBB021B193A000979A06 /* Entities.swift */; };
 		63B1BBB521B193C600979A06 /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1BBB421B193C600979A06 /* EntityManager.swift */; };
 		63B1BBB721B1958000979A06 /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1BBB621B1958000979A06 /* TeamComponent.swift */; };
+		63EF611E21B95565001B43F5 /* AttackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EF611D21B95565001B43F5 /* AttackComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		63B1BBB021B193A000979A06 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		63B1BBB421B193C600979A06 /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
 		63B1BBB621B1958000979A06 /* TeamComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComponent.swift; sourceTree = "<group>"; };
+		63EF611D21B95565001B43F5 /* AttackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				6303605021B1DB0300663E59 /* MoveComponent.swift */,
 				6303605621B1E1CA00663E59 /* AIComponent.swift */,
 				6339B2D021B86AA10088CA10 /* HealthComponent.swift */,
+				63EF611D21B95565001B43F5 /* AttackComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				633DA21221A87F14008AA35E /* GameScene.swift in Sources */,
 				633DA21421A87F14008AA35E /* GameViewController.swift in Sources */,
 				63B1BBAF21B1938100979A06 /* SpriteComponent.swift in Sources */,
+				63EF611E21B95565001B43F5 /* AttackComponent.swift in Sources */,
 				638FC1B821AC74510020DFB3 /* MyMath.swift in Sources */,
 				633DA20C21A87F14008AA35E /* AppDelegate.swift in Sources */,
 				633DA22821A87FBE008AA35E /* Constants.swift in Sources */,

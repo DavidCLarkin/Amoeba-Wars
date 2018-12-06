@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     let margin = CGFloat(100)
     
@@ -27,6 +27,7 @@ class GameScene: SKScene
     override func didMove(to view: SKView)
     {
         entityManager = EntityManager(scene: self)
+        physicsWorld.contactDelegate = self
         self.size = CGSize(width: 1024, height: 768)
         self.anchorPoint = CGPoint(x: 0,y: 0)
         // Create entity manager
@@ -176,4 +177,24 @@ class GameScene: SKScene
         entityManager.spawnProteus(team: .teamLeft)
     }
     
+    func collisionBetween(amoeba: SKNode, object: SKNode)
+    {
+        if amoeba.name == "Histolytica" {
+            print("\(amoeba.name)")
+        } else if object.name == "Histolytica" {
+            print("\(object.name)")
+        }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact)
+    {
+        print("collision")
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+        if nodeA.name == "Histolytica" {
+            collisionBetween(amoeba: nodeA, object: nodeB)
+        } else if nodeB.name == "Histolytica" {
+            collisionBetween(amoeba: nodeB, object: nodeA)
+        }
+    }
 }
