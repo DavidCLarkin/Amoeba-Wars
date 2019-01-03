@@ -48,8 +48,9 @@ class HealthComponent : GKComponent
     
     override func update(deltaTime seconds: TimeInterval)
     {
-        if currentHealth > 0
+        if currentHealth <= 0
         {
+            
             // TODO take damage on collision
             // TODO remove from parent if health <= 0
             //print("health: \(currentHealth)")

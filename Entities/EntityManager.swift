@@ -14,10 +14,11 @@ class EntityManager
     lazy var componentSystems: [GKComponentSystem] =
     {
         let baseSystem = GKComponentSystem(componentClass: BaseComponent.self)
+        let meleeSystem = GKComponentSystem(componentClass: MeleeComponent.self)
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
         let aiSystem = GKComponentSystem(componentClass: AIComponent.self)
         let healthSystem = GKComponentSystem(componentClass: HealthComponent.self)
-        return [baseSystem, moveSystem, aiSystem, healthSystem]
+        return [baseSystem, meleeSystem, moveSystem, aiSystem, healthSystem]
     }()
     
     var toRemove = Set<GKEntity>()
@@ -49,6 +50,19 @@ class EntityManager
         
     }
     
+    func entitiesForTeam(_ team: Team) -> [GKEntity]
+    {
+        
+        return entities.flatMap{ entity in
+            if let teamComponent = entity.component(ofType: TeamComponent.self) {
+                if teamComponent.team == team {
+                    return entity
+                }
+            }
+            return nil
+        }
+        
+    }
     // 4
     func remove(_ entity: GKEntity)
     {
@@ -72,7 +86,8 @@ class EntityManager
         // 2
         for currentRemove in toRemove
         {
-            for componentSystem in componentSystems {
+            for componentSystem in componentSystems
+            {
                 componentSystem.removeComponent(foundIn: currentRemove)
             }
         }
@@ -199,7 +214,8 @@ class EntityManager
     {
         let entitiesToMove = entities(for: team)
         var moveComponents = [MoveComponent]()
-        for entity in entitiesToMove {
+        for entity in entitiesToMove
+        {
             if let moveComponent = entity.component(ofType: MoveComponent.self)
             {
                 moveComponents.append(moveComponent)

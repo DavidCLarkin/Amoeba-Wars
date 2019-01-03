@@ -23,11 +23,11 @@ class Proteus: GKEntity
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 50, maxAcceleration: 1, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
         addComponent(HealthComponent(health: 300, maxHealth: 300))
-        addComponent(AttackComponent(entityManager: entityManager, spriteComponent: spriteComponent))
-        
+        addComponent(MeleeComponent(damage: 150, damageRate: 1.5, aoe: true, entityManager: entityManager))
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -23,8 +23,7 @@ class Fowleri: GKEntity
         addComponent(TeamComponent(team: team))
         addComponent(MoveComponent(maxSpeed: 50, maxAcceleration: 1, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
         addComponent(HealthComponent(health: 150, maxHealth: 150))
-        addComponent(AttackComponent(entityManager: entityManager, spriteComponent: spriteComponent))
-        
+        addComponent(MeleeComponent(damage: 35, damageRate: 0.5, aoe: false, entityManager: entityManager))
     }
     
     required init?(coder aDecoder: NSCoder) {
